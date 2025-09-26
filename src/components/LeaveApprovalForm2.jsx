@@ -5,14 +5,13 @@ import AttachmentSection from "./AttachmentSection";
 import ReasonCommentSection from "./ReasonCommentSection";
 import ActionButtons from "./ActionButtons";
 import ViewPolicies from "./ViewPolicies";
-import ApplyOrCancelIcon from "../assets/svg/apply_or_cancel.svg";
-import TransferWfButton from "../assets/svg/transfer-wf.svg";
+import ApplyOrCancelIcon from "../assets/apply_or_cancel.svg";
+import TransferWfButton from "../assets/transfer-wf.svg";
 import TransferWorkflowBanner from "./TransferWorkflowBanner";
 
-const LeaveApprovalFormContent = ({ showAcknowledgement = false, defaultFileName = "Medical Certificate.pdf" }) => {
+const LeaveApprovalForm2 = () => {
   const [requestType, setRequestType] = useState("transferTo");
-  const [transferTo, setTransferTo] = useState("Krishna@Samsung.com");
-
+  const [transferTo, setTransferTo] = useState("");
   const handleReject = () => {
     console.log("Reject clicked");
   };
@@ -31,17 +30,17 @@ const LeaveApprovalFormContent = ({ showAcknowledgement = false, defaultFileName
       </div>
 
       <Frame1000007590 />
-      <AttachmentSection defaultFileName={defaultFileName} />
-      {showAcknowledgement && (
-        <div className="acknowledgement">
-          <label className="acknowledgement-label">
-            <input type="checkbox" className="ack-checkbox" />
-            <span className="ack-text">
-              If I wish to resume work sooner/late due to any reason, I am aware that I have to notify you on the same & I hereby assure that I shall not work in any establishment during the period for which I receive Maternity Benefit from Samsung R& D Institute India Pvt. Ltd - Bangalore.
-            </span>
-          </label>
-        </div>
-      )}
+      <AttachmentSection defaultFileName="Medical Certificate.pdf" />
+      
+      <div className="acknowledgement">
+        <label className="acknowledgement-label">
+          <input type="checkbox" className="ack-checkbox" />
+          <span className="ack-text">
+            If I wish to resume work sooner/late due to any reason, I am aware that I have to notify you on the same & I hereby assure that I shall not work in any establishment during the period for which I receive Maternity Benefit from Samsung R& D Institute India Pvt. Ltd - Bangalore.
+          </span>
+        </label>
+      </div>
+      
       <ReasonCommentSection />
       <ActionButtons onReject={handleReject} onApprove={handleApprove} />
 
@@ -82,12 +81,16 @@ const LeaveApprovalFormContent = ({ showAcknowledgement = false, defaultFileName
           className="transfer-input"
           value={transferTo}
           onChange={(e) => setTransferTo(e.target.value)}
-          placeholder="Enter email address"
+          placeholder="Krishna@Samsung.com"
         />
       </div>
 
       <label className="field-label">Comment (Max 500 Chars)</label>
-      <textarea className="comment-textarea" placeholder="" rows={3} />
+      <textarea 
+        className="comment-textarea" 
+        placeholder="I have an important personal matter to attend at my Home town." 
+        rows={3} 
+      />
 
       <div className="transfer-button-container">
         <img src={TransferWfButton} alt="Transfer WF" className="transfer-wf-button" />
@@ -98,4 +101,4 @@ const LeaveApprovalFormContent = ({ showAcknowledgement = false, defaultFileName
   );
 };
 
-export default LeaveApprovalFormContent;
+export default LeaveApprovalForm2;

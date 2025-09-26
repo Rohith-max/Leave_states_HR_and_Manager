@@ -1,12 +1,12 @@
 import React from "react";
 import "../styles/Navbar.css";
-import CalendarIcon from "../assets/svg/calender.svg";
-import MarkerIcon from "../assets/svg/marker.svg";
-import KeyIcon from "../assets/svg/key.svg";
-import BookmarkIcon from "../assets/svg/bookmark.svg";
-import AppsLogoIcon from "../assets/svg/appslogo.svg";
-import LogoIcon from "../assets/svg/logo.svg";
-import BellIcon from "../assets/svg/notificationbell.svg";
+import CalendarIcon from "../assets/calender.svg";
+import MarkerIcon from "../assets/marker.svg";
+import KeyIcon from "../assets/key.svg";
+import BookmarkIcon from "../assets/bookmark.svg";
+import AppsLogoIcon from "../assets/appslogo.svg";
+import LogoIcon from "../assets/logo.svg";
+import BellIcon from "../assets/notificationbell.svg";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 
 const Navbar = () => {

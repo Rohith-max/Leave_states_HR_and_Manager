@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "../styles/ReasonCommentSection.css";
 
 const ReasonCommentSection = () => {
-  const [reason, setReason] = useState("I have an important personal matter to attend at my Home town.");
-  const [comment, setComment] = useState("I have an important personal matter to attend at my Home town.");
+  const [reason, setReason] = useState("");
+  const [comment, setComment] = useState("");
 
   const handleReasonChange = (e) => {
     if (e.target.value.length <= 100) {
@@ -26,10 +26,9 @@ const ReasonCommentSection = () => {
         className="reason-textarea"
         value={reason}
         onChange={handleReasonChange}
-        placeholder="Enter reason for leave"
+        placeholder="i have fever"
         rows={3}
       />
-      
 
       <label className="field-label">
         Comment (Max 500 Chars)
@@ -38,7 +37,7 @@ const ReasonCommentSection = () => {
         className="comment-textarea"
         value={comment}
         onChange={handleCommentChange}
-        placeholder="Enter additional comments"
+        placeholder="I have an important personal matter to attend at my Home town."
         rows={4}
       />
     </>

@@ -99,20 +99,21 @@
 }
 
 .transfer-input {
-  width: 100%;
-  max-width: 100%;
-  padding: 8px 12px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  width: 1320px;
+  height: 50px;
+  padding: 16px;
+  border: 0.5px solid #ddd;
+  border-radius: 6px;
   font-size: 14px;
   background: white;
   box-sizing: border-box;
+  opacity: 1;
 }
 
 .comment-textarea {
   width: 100%;
   max-width: 100%;
-  padding: 8px 12px;
+  padding: 16px;
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 14px;
@@ -120,6 +121,8 @@
   resize: none;
   margin-bottom: 16px;
   box-sizing: border-box;
+  text-align: left;
+  position: relative; /* For absolute positioning of placeholder */
 }
 
 .transfer-button-container {

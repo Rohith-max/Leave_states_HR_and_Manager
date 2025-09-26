@@ -1,15 +1,16 @@
 import React, { useState } from "react";
+import "../styles/LeaveApprovalForm2.css";
 import Frame1000007590 from "./Frame1000007590";
 import AttachmentSection from "./AttachmentSection";
 import ReasonCommentSection from "./ReasonCommentSection";
 import ActionButtons from "./ActionButtons";
 import ViewPolicies from "./ViewPolicies";
-import "../styles/LeaveApprovalForm.css";
 import ApplyOrCancelIcon from "../assets/apply_or_cancel.svg";
-import TransferWorkflowIcon from "../assets/transfer-workflow.svg";
-import TransferWfIcon from "../assets/transfer-wf.svg";
+import TransferWfButton from "../assets/transfer-wf.svg";
+import UploadIconMaternity from "../assets/upload_icon_maternity.svg";
+import TransferWorkflowBanner from "./TransferWorkflowBanner";
 
-const LeaveApprovalForm = () => {
+const LeaveApprovalForm4 = () => {
   const [requestType, setRequestType] = useState("transferTo");
   const [transferTo, setTransferTo] = useState("");
 
@@ -29,14 +30,14 @@ const LeaveApprovalForm = () => {
           <h3 className="section-title">Apply/Cancel Leave Approval</h3>
         </div>
       </div>
-      
-      <Frame1000007590 />
-      <AttachmentSection defaultFileName="Medical Certificate.pdf" />
+
+      <Frame1000007590 leaveType="Maternity Leave" />
+      <AttachmentSection defaultFileName="Maternity Certificate.pdf" uploadIcon={UploadIconMaternity} />
       <ReasonCommentSection />
       <ActionButtons onReject={handleReject} onApprove={handleApprove} />
-      
+
       <div className="transfer-header">
-        <img src={TransferWorkflowIcon} alt="Transfer Workflow" className="transfer-workflow-icon" />
+        <TransferWorkflowBanner />
       </div>
 
       <h4 className="section-title">Request Type</h4>
@@ -59,7 +60,9 @@ const LeaveApprovalForm = () => {
             checked={requestType === "reviewAndSendBack"}
             onChange={(e) => setRequestType(e.target.value)}
           />
-          <span className={`radio-label ${requestType === "reviewAndSendBack" ? "selected" : ""}`}>Review and send back to Me (No Data Modification)</span>
+          <span className={`radio-label ${requestType === "reviewAndSendBack" ? "selected" : ""}`}>
+            Review and send back to Me (No Data Modification)
+          </span>
         </label>
       </div>
 
@@ -75,19 +78,15 @@ const LeaveApprovalForm = () => {
       </div>
 
       <label className="field-label">Comment (Max 500 Chars)</label>
-      <textarea
-        className="comment-textarea"
-        placeholder="I have an important personal matter to attend at my Home town."
-        rows={3}
-      />
+      <textarea className="comment-textarea" placeholder="I have an important personal matter to attend at my Home town." rows={3} />
 
       <div className="transfer-button-container">
-        <img src={TransferWfIcon} alt="Transfer WF" className="transfer-wf-button" />
+        <img src={TransferWfButton} alt="Transfer WF" className="transfer-wf-button" />
       </div>
-      
+
       <ViewPolicies />
     </div>
   );
 };
 
-export default LeaveApprovalForm;
+export default LeaveApprovalForm4;

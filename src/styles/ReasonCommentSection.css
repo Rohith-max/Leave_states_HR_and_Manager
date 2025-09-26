@@ -15,11 +15,11 @@
   margin-bottom: 8px;
 }
 
+/* Base textarea styles */
 .reason-textarea,
 .comment-textarea {
   width: 100%;
   max-width: 100%;
-  padding: 12px 16px;
   border: 1px solid #d1d5db;
   border-radius: 8px;
   font-size: 14px;
@@ -27,8 +27,21 @@
   background: rgba(245, 245, 245, 1);
   resize: none;
   font-family: inherit;
-  line-height: 1.5;
+  line-height: 1.5; /* ~21px for 14px font */
   box-sizing: border-box;
+  text-align: left; /* Keep left alignment */
+  position: relative; /* For absolute positioning of placeholder */
+}
+
+/* Vertically center first line by balancing vertical padding for typical box heights */
+.reason-textarea {
+  height: 72px; /* approx 3 lines box */
+  padding: 20px 16px; /* centers first line vertically */
+}
+
+.comment-textarea {
+  height: 96px; /* approx 4 lines box */
+  padding: 24px 16px; /* centers first line vertically */
 }
 
 .reason-textarea:focus,
@@ -41,6 +54,14 @@
 .reason-textarea::placeholder,
 .comment-textarea::placeholder {
   color: #9ca3af;
+  text-align: left;
+  vertical-align: middle;
+  line-height: 1.5;
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
 }
 
 .char-count {

@@ -1,7 +1,7 @@
 import React from "react";
-import Bg from "../assets/svg/transfer-workflow-bg.svg";
-import Symbol from "../assets/svg/transfer-workflow-symbol.svg";
-import Chevron from "../assets/svg/chevron-down.svg";
+import Bg from "../assets/transfer-workflow-bg.svg";
+import Symbol from "../assets/transfer-workflow-symbol.svg";
+import Chevron from "../assets/chevron-down.svg";
 import "../styles/TransferWorkflowBanner.css";
 
 const TransferWorkflowBanner = ({ className = "" }) => {

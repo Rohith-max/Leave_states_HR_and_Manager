@@ -75,7 +75,10 @@
   margin-top: 2px;
   width: 16px;
   height: 16px;
+  accent-color: #2563eb; /* blue when checked */
 }
+
+/* Keep label text color unchanged (black). Only the radio control uses accent-color. */
 
 .radio-label {
   font-size: 14px;
@@ -99,27 +102,51 @@
 }
 
 .transfer-input {
-  width: 100%;
-  max-width: 100%;
-  padding: 8px 12px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  width: 1320px;
+  height: 50px;
+  padding: 16px 16px 16px 16px;
+  border: 0.5px solid #ddd;
+  border-radius: 6px;
   font-size: 14px;
-  background: white;
   box-sizing: border-box;
+  opacity: 1;
+  gap: 12px;
 }
 
-.comment-textarea {
-  width: 100%;
-  max-width: 100%;
-  padding: 8px 12px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+.reason-textarea {
+  width: 1320px;
+  height: 90px;
+  padding: 16px;
+  border: 0.5px solid #ddd;
+  border-radius: 6px;
   font-size: 14px;
-  background: white;
+  background: rgba(245, 245, 245, 1);
   resize: none;
   margin-bottom: 16px;
   box-sizing: border-box;
+  line-height: 1.5;
+  text-align: left;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+}
+
+.reason-textarea::placeholder {
+  color: #9ca3af;
+  vertical-align: middle;
+  line-height: 1.5;
+}
+
+.comment-textarea::placeholder {
+  color: #9ca3af;
+  vertical-align: middle;
+  line-height: 1.5;
+  text-align: left;
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
 }
 
 .transfer-button-container {
@@ -147,7 +174,7 @@
   width: 16px;
   height: 16px;
   margin-top: 2px;
-  accent-color: #2563eb; /* blue when checked */
+  accent-color: rgba(56, 174, 224, 1); /* updated to specified blue */
 }
 
 .ack-text {

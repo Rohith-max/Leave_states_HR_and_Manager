@@ -1,9 +1,9 @@
 import React from "react";
 import "../styles/Frame1000007590.css";
 
-const Frame1000007590 = () => {
+const Frame1000007590 = ({ leaveType = "Medical Leave" }) => {
   const leaveData = {
-    leaveType: "Medical Leave",
+    leaveType: leaveType,
     appliedDate: "30-June-2025",
     leaveFrom: "18-Aug-2025",
     leaveTo: "20-Oct-2025",
